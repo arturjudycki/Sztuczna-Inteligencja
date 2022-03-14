@@ -1,0 +1,1 @@
+Rozwiązane zestawy zadań na przedmiot Sztuczna Inteligencja.
