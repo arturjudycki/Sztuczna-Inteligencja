@@ -30,7 +30,7 @@ public class ex3_f {
         ArrayList<Double> listOfStandardDevations = new ArrayList<Double>();
 
         int n = listOfString.size();
-        for(int i=0;i<listOfString.get(0).length;i++){
+        for(int i=0;i<listOfString.get(0).length-1;i++){
             double sum=0.0;
             for(String[] str: listOfString){
                 sum+=Double.valueOf(str[i]);

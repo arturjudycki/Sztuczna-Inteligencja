@@ -45,7 +45,7 @@ public class ex4_b {
 
         System.out.println("Wybrany system bez żadnych zmian");
         for (String[] str : listOfString) {
-            for (int i = 0; i < str.length; i++) {
+            for (int i = 0; i < str.length-1; i++) {
                 System.out.print(str[i] + " ");
             }
             System.out.println();
@@ -55,7 +55,7 @@ public class ex4_b {
         System.out.println("Znormalizowane atrybuty numeryczne na przedział: <-1,1>");
         firstInterval = normalizationOnFirstInterval(listOfString2);
         for (String[] str : firstInterval) {
-            for (int i = 0; i < str.length; i++) {
+            for (int i = 0; i < str.length-1; i++) {
                 System.out.print(str[i] + " ");
             }
             System.out.println();
@@ -65,7 +65,7 @@ public class ex4_b {
         System.out.println("Znormalizowane atrybuty numeryczne na przedział: <0,1>");
         secondInterval = normalizationOnSecondInterval(listOfString3);
         for (String[] str : secondInterval) {
-            for (int i = 0; i < str.length; i++) {
+            for (int i = 0; i < str.length-1; i++) {
                 System.out.print(str[i] + " ");
             }
             System.out.println();
@@ -75,7 +75,7 @@ public class ex4_b {
         System.out.println("Znormalizowane atrybuty numeryczne na przedział: <-10,10>");
         thirdInterval = normalizationOnThirdInterval(listOfString4);
         for (String[] str : thirdInterval) {
-            for (int i = 0; i < str.length; i++) {
+            for (int i = 0; i < str.length-1; i++) {
                 System.out.print(str[i] + " ");
             }
             System.out.println();
@@ -91,7 +91,7 @@ public class ex4_b {
         int a = -1;
         int b = 1;
 
-        for(int i=0;i<listOfString.get(0).length;i++){
+        for(int i=0;i<listOfString.get(0).length-1;i++){
             for(String[] str: listOfString){
                 double equation = (((Double.valueOf(str[i])-listOfMinValues.get(i))*(b-a))/listOfMaxValues.get(i)-listOfMinValues.get(i))+a;
                 str[i] = String.format("%.3f", equation);
@@ -108,7 +108,7 @@ public class ex4_b {
         int a = 0;
         int b = 1;
 
-        for(int i=0;i<listOfString.get(0).length;i++){
+        for(int i=0;i<listOfString.get(0).length-1;i++){
             for(String[] str: listOfString){
                 double equation = (((Double.valueOf(str[i])-listOfMinValues.get(i))*(b-a))/listOfMaxValues.get(i)-listOfMinValues.get(i))+a;
                 str[i] = String.format("%.3f", equation);
@@ -125,7 +125,7 @@ public class ex4_b {
         int a = -10;
         int b = 10;
 
-        for(int i=0;i<listOfString.get(0).length;i++){
+        for(int i=0;i<listOfString.get(0).length-1;i++){
             for(String[] str: listOfString){
                 double equation = (((Double.valueOf(str[i])-listOfMinValues.get(i))*(b-a))/listOfMaxValues.get(i)-listOfMinValues.get(i))+a;
                 str[i] = String.format("%.3f", equation);
@@ -138,7 +138,7 @@ public class ex4_b {
     public static ArrayList<Double> minValuesOfAttributes(ArrayList<String[]> listOfString){
         ArrayList<Double> listOfMinValues = new ArrayList<Double>();
 
-        for(int i=0; i<listOfString.get(0).length;i++){
+        for(int i=0; i<listOfString.get(0).length-1;i++){
             double min = Double.valueOf(listOfString.get(0)[i]);
             for (String[] str : listOfString) {
                 if (Double.valueOf(str[i])<min){
@@ -154,7 +154,7 @@ public class ex4_b {
     public static ArrayList<Double> maxValuesOfAttributes(ArrayList<String[]> listOfString){
         ArrayList<Double> listOfMaxValues = new ArrayList<Double>();
 
-        for(int i=0; i<listOfString.get(0).length;i++){
+        for(int i=0; i<listOfString.get(0).length-1;i++){
             double max = Double.valueOf(listOfString.get(0)[i]);
             for (String[] str : listOfString) {
                 if (Double.valueOf(str[i])>max){

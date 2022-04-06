@@ -24,8 +24,30 @@ public class ex3_ab {
         }
         System.out.println();
 
-        System.out.println("Wielkość klas decyzyjnych: " + listOfString.get(0).length);
+        int k = 0;
+        int different = 0;
+        ArrayList<String> listOfDifferentValues = new ArrayList<String>();
+        for (String[] str : listOfString) {
+                System.out.println(str[listOfString.get(0).length-1] + " ");
+            if (k == 0) {
+                listOfDifferentValues.add(str[listOfString.get(0).length-1]);
+            } else {
+                for (int j = 0; j < listOfDifferentValues.size(); j++) {
+                    if (!Double.valueOf(str[listOfString.get(0).length-1]).equals(Double.valueOf(listOfDifferentValues.get(j)))) {
+                        different++;
+                    }
+                }
+            }
+            if (different == listOfDifferentValues.size()) {
+                listOfDifferentValues.add(str[listOfString.get(0).length-1]);
+            }
+            different = 0;
+            k++;
+        }
+
+        System.out.println("Wielkość klas decyzyjnych: " + listOfDifferentValues.size());
 
         }
+
     }
 

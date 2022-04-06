@@ -28,9 +28,9 @@ public class ex4_a {
         }
 
         tenPerCentOfMissingValues = tenPerCentOfMissingValues(listOfString2);
-
+        System.out.println("Dane, gdzie 10% wartości jest nieznanych");
         for (String[] str : tenPerCentOfMissingValues) {
-            for (int j = 0; j < str.length; j++) {
+            for (int j = 0; j < str.length-1; j++) {
                 System.out.print(str[j] + " ");
             }
             System.out.println();
@@ -38,9 +38,9 @@ public class ex4_a {
         System.out.println();
 
         fixingWithMean = fixingByMean(listOfString,tenPerCentOfMissingValues);
-
+        System.out.println("Dane, gdzie wartości nieznane są zastąpione wartością średnią dla danego atrybutu numerycznego");
         for (String[] str : fixingWithMean) {
-            for (int k = 0; k < str.length; k++) {
+            for (int k = 0; k < str.length-1; k++) {
                 System.out.print(str[k] + " ");
             }
             System.out.println();
@@ -52,11 +52,11 @@ public class ex4_a {
     public static ArrayList<String[]> tenPerCentOfMissingValues(ArrayList<String[]> listOfString){
         Random generator = new Random();
 
-        long numberOfUnknownValues = Math.round((listOfString.size()*listOfString.get(0).length)*0.1);
+        long numberOfUnknownValues = Math.round((listOfString.size()*listOfString.get(0).length-1)*0.1);
         int i = 0;
         while (i != numberOfUnknownValues){
             int genNumber1 = generator.nextInt(768);
-            int genNumber2 = generator.nextInt(9);
+            int genNumber2 = generator.nextInt(8);
             if(!listOfString.get(genNumber1)[genNumber2].equals("?")){
                 listOfString.get(genNumber1)[genNumber2] = "?";
                 i++;
@@ -70,7 +70,7 @@ public class ex4_a {
         ArrayList<Double> listOfMean = new ArrayList<Double>();
 
         int n = listOfString.size();
-        for(int i=0;i<listOfString.get(0).length;i++){
+        for(int i=0;i<listOfString.get(0).length-1;i++){
             double sum=0.0;
             for(String[] str: listOfString){
                 sum+=Double.valueOf(str[i]);
@@ -85,7 +85,7 @@ public class ex4_a {
     public static ArrayList<String[]> fixingByMean(ArrayList<String[]> listOfString,ArrayList<String[]> listOfString2){
         ArrayList<Double> listOfMean = listOfMean(listOfString);
 
-        for(int i=0;i<listOfString2.get(0).length;i++){
+        for(int i=0;i<listOfString2.get(0).length-1;i++){
             for(String[] str: listOfString2){
                 if(str[i].equals("?")){
                     str[i] = String.format("%.3f", listOfMean.get(i));

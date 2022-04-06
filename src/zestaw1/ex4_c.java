@@ -29,7 +29,7 @@ public class ex4_c {
 
         System.out.println("Wybrany system bez standaryzacji");
         for (String[] str : listOfString) {
-            for (int i = 0; i < str.length; i++) {
+            for (int i = 0; i < str.length-1; i++) {
                 System.out.print(str[i] + " ");
             }
             System.out.println();
@@ -39,7 +39,7 @@ public class ex4_c {
         System.out.println("Wybrany system po standaryzacji");
         listAfterStandarization = standarization(listOfString2);
         for (String[] str : listAfterStandarization) {
-            for (int i = 0; i < str.length; i++) {
+            for (int i = 0; i < str.length-1; i++) {
                 System.out.print(str[i] + " ");
             }
             System.out.println();
@@ -63,7 +63,7 @@ public class ex4_c {
         ArrayList<Double> listOfMean = listOfMean(listOfString);
         ArrayList<Double> valuesOfStandardDeviations = valuesOfStandardDeviations(listOfString);
 
-        for(int i=0;i<listOfString.get(0).length;i++){
+        for(int i=0;i<listOfString.get(0).length-1;i++){
             for(String[] str: listOfString){
                 double result = (Double.valueOf(str[i])-listOfMean.get(i))/valuesOfStandardDeviations.get(i);
                 str[i] = String.valueOf(result);
@@ -77,7 +77,7 @@ public class ex4_c {
         ArrayList<Double> listOfMean = new ArrayList<Double>();
 
         int n = listOfString.size();
-        for(int i=0;i<listOfString.get(0).length;i++){
+        for(int i=0;i<listOfString.get(0).length-1;i++){
             double sum=0.0;
             for(String[] str: listOfString){
                 sum+=Double.valueOf(str[i]);
@@ -94,7 +94,7 @@ public class ex4_c {
         ArrayList<Double> listOfMean = listOfMean(listOfString);
 
         int n = listOfString.size();
-        for(int i=0;i<listOfString.get(0).length;i++){
+        for(int i=0;i<listOfString.get(0).length-1;i++){
             double variance = 0.0;
             for(String[] str: listOfString){
                 variance += Math.pow((Double.valueOf(str[i])-listOfMean.get(i)),2);

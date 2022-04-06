@@ -40,7 +40,7 @@ public class ex3_c {
     public static ArrayList<Double> minValuesOfAttributes(ArrayList<String[]> listOfString){
         ArrayList<Double> listOfMinValues = new ArrayList<Double>();
 
-        for(int i=0; i<listOfString.get(0).length;i++){
+        for(int i=0; i<listOfString.get(0).length-1;i++){
             double min = Double.valueOf(listOfString.get(0)[i]);
             for (String[] str : listOfString) {
                 if (Double.valueOf(str[i])<min){
@@ -56,7 +56,7 @@ public class ex3_c {
     public static ArrayList<Double> maxValuesOfAttributes(ArrayList<String[]> listOfString){
         ArrayList<Double> listOfMaxValues = new ArrayList<Double>();
 
-        for(int i=0; i<listOfString.get(0).length;i++){
+        for(int i=0; i<listOfString.get(0).length-1;i++){
             double max = Double.valueOf(listOfString.get(0)[i]);
             for (String[] str : listOfString) {
                 if (Double.valueOf(str[i])>max){

@@ -26,7 +26,7 @@ public class ex3_e {
         int k = 0;
         int different = 0;
         int nAtr = 1;
-        for (int i = 0; i < listOfString.get(0).length; i++) {
+        for (int i = 0; i < listOfString.get(0).length-1; i++) {
             for (String[] str : listOfString) {
                 if (k == 0) {
                     listOfDifferentValues.add(str[i]);
